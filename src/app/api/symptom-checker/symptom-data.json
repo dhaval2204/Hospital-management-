@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "disease": "Common Cold",
+    "symptoms": ["runny nose", "sneezing", "sore throat", "mild fever", "cough", "congestion", "headache", "fatigue"],
+    "description": "A viral infection of the upper respiratory tract.",
+    "severity": "mild",
+    "advice": "Rest, stay hydrated, and take OTC cold medicine. See a doctor if symptoms worsen after 10 days.",
+    "specialist": "General Physician",
+    "emoji": "🤧"
+  },
+  {
+    "id": 2,
+    "disease": "Influenza (Flu)",
+    "symptoms": ["high fever", "chills", "body aches", "muscle pain", "fatigue", "cough", "headache", "sore throat", "runny nose"],
+    "description": "A contagious respiratory illness caused by influenza viruses.",
+    "severity": "moderate",
+    "advice": "Rest, drink fluids, and take antiviral medication if prescribed early. Avoid contact with others.",
+    "specialist": "General Physician",
+    "emoji": "🤒"
+  },
+  {
+    "id": 3,
+    "disease": "COVID-19",
+    "symptoms": ["fever", "cough", "shortness of breath", "loss of taste", "loss of smell", "fatigue", "body aches", "chills", "sore throat", "headache"],
+    "description": "A respiratory illness caused by the SARS-CoV-2 virus.",
+    "severity": "moderate",
+    "advice": "Isolate immediately, get tested, and follow local health guidelines. Seek emergency care for breathing difficulty.",
+    "specialist": "Infectious Disease Specialist",
+    "emoji": "😷"
+  },
+  {
+    "id": 4,
+    "disease": "Dengue Fever",
+    "symptoms": ["high fever", "severe headache", "joint pain", "muscle pain", "rash", "pain behind eyes", "nausea", "vomiting", "fatigue"],
+    "description": "A mosquito-borne viral infection common in tropical regions.",
+    "severity": "high",
+    "advice": "Seek medical attention immediately. Stay hydrated, avoid aspirin/ibuprofen. Monitor platelet count.",
+    "specialist": "Infectious Disease Specialist",
+    "emoji": "🦟"
+  },
+  {
+    "id": 5,
+    "disease": "Typhoid",
+    "symptoms": ["sustained fever", "weakness", "abdominal pain", "headache", "loss of appetite", "constipation", "diarrhea", "rash", "fatigue"],
+    "description": "A bacterial infection caused by Salmonella typhi, spread through contaminated food/water.",
+    "severity": "high",
+    "advice": "Consult a doctor immediately for antibiotics. Drink clean water only and avoid raw foods.",
+    "specialist": "General Physician / Gastroenterologist",
+    "emoji": "🦠"
+  },
+  {
+    "id": 6,
+    "disease": "Malaria",
+    "symptoms": ["high fever", "chills", "sweating", "headache", "nausea", "vomiting", "muscle pain", "fatigue", "anemia"],
+    "description": "A parasitic infection transmitted by Anopheles mosquitoes.",
+    "severity": "high",
+    "advice": "Seek urgent medical care. Antimalarial drugs must be prescribed by a doctor. Avoid mosquito exposure.",
+    "specialist": "Infectious Disease Specialist",
+    "emoji": "🦟"
+  },
+  {
+    "id": 7,
+    "disease": "Pneumonia",
+    "symptoms": ["cough", "fever", "chills", "shortness of breath", "chest pain", "fatigue", "nausea", "vomiting", "confusion"],
+    "description": "An infection that inflames the air sacs in one or both lungs.",
+    "severity": "high",
+    "advice": "See a doctor immediately. Treatment includes antibiotics/antivirals. Severe cases require hospitalization.",
+    "specialist": "Pulmonologist",
+    "emoji": "🫁"
+  },
+  {
+    "id": 8,
+    "disease": "Gastroenteritis",
+    "symptoms": ["diarrhea", "nausea", "vomiting", "stomach cramps", "abdominal pain", "fever", "headache", "dehydration", "loss of appetite"],
+    "description": "Inflammation of the stomach and intestines, often caused by infection.",
+    "severity": "moderate",
+    "advice": "Stay hydrated with ORS. Eat bland foods. See a doctor if diarrhea lasts more than 2 days or blood appears.",
+    "specialist": "Gastroenterologist",
+    "emoji": "🤢"
+  },
+  {
+    "id": 9,
+    "disease": "Appendicitis",
+    "symptoms": ["severe abdominal pain", "pain around navel", "nausea", "vomiting", "fever", "loss of appetite", "diarrhea", "bloating"],
+    "description": "Inflammation of the appendix, a medical emergency requiring surgery.",
+    "severity": "critical",
+    "advice": "Go to the emergency room immediately. Do NOT eat/drink anything. Surgery is usually required.",
+    "specialist": "General Surgeon",
+    "emoji": "🏥"
+  },
+  {
+    "id": 10,
+    "disease": "Migraine",
+    "symptoms": ["severe headache", "throbbing pain", "nausea", "vomiting", "sensitivity to light", "sensitivity to sound", "blurred vision", "dizziness"],
+    "description": "A neurological condition causing severe recurring headaches.",
+    "severity": "moderate",
+    "advice": "Rest in a dark quiet room, take prescribed medication. Track triggers. Consult a neurologist for frequent attacks.",
+    "specialist": "Neurologist",
+    "emoji": "🧠"
+  },
+  {
+    "id": 11,
+    "disease": "Hypertension",
+    "symptoms": ["headache", "dizziness", "shortness of breath", "chest pain", "blurred vision", "nosebleed", "fatigue", "palpitations"],
+    "description": "High blood pressure that can lead to serious heart and kidney problems.",
+    "severity": "moderate",
+    "advice": "Monitor blood pressure regularly. Reduce salt, exercise, and take prescribed medication. Avoid stress.",
+    "specialist": "Cardiologist",
+    "emoji": "❤️"
+  },
+  {
+    "id": 12,
+    "disease": "Diabetes (Type 2)",
+    "symptoms": ["frequent urination", "excessive thirst", "fatigue", "blurred vision", "slow healing wounds", "frequent infections", "numbness", "tingling hands", "weight loss"],
+    "description": "A metabolic disorder causing high blood sugar due to insulin resistance.",
+    "severity": "moderate",
+    "advice": "Monitor blood sugar, follow a healthy diet, exercise regularly, and take prescribed medication.",
+    "specialist": "Endocrinologist",
+    "emoji": "🩺"
+  },
+  {
+    "id": 13,
+    "disease": "Asthma",
+    "symptoms": ["shortness of breath", "wheezing", "chest tightness", "cough", "difficulty breathing", "night cough", "breathlessness"],
+    "description": "A chronic condition causing airway inflammation and narrowing.",
+    "severity": "moderate",
+    "advice": "Use prescribed inhalers, avoid triggers, and follow your asthma action plan. Emergency care for severe attacks.",
+    "specialist": "Pulmonologist",
+    "emoji": "💨"
+  },
+  {
+    "id": 14,
+    "disease": "Urinary Tract Infection (UTI)",
+    "symptoms": ["burning urination", "frequent urination", "cloudy urine", "pelvic pain", "lower back pain", "fever", "strong urine odor", "blood in urine"],
+    "description": "A bacterial infection affecting any part of the urinary system.",
+    "severity": "mild",
+    "advice": "Drink plenty of water. Antibiotics are required — see a doctor for prescription. Avoid delaying treatment.",
+    "specialist": "Urologist",
+    "emoji": "💊"
+  },
+  {
+    "id": 15,
+    "disease": "Anemia",
+    "symptoms": ["fatigue", "weakness", "pale skin", "shortness of breath", "dizziness", "cold hands", "cold feet", "chest pain", "headache"],
+    "description": "A condition where blood lacks enough healthy red blood cells or hemoglobin.",
+    "severity": "moderate",
+    "advice": "Eat iron-rich foods, take supplements as prescribed. Identify and treat the underlying cause.",
+    "specialist": "Hematologist",
+    "emoji": "🩸"
+  },
+  {
+    "id": 16,
+    "disease": "Chickenpox",
+    "symptoms": ["itchy rash", "blisters", "fever", "fatigue", "loss of appetite", "headache", "red spots"],
+    "description": "A highly contagious viral infection causing an itchy blister-like rash.",
+    "severity": "mild",
+    "advice": "Rest, avoid scratching, use calamine lotion. Stay isolated. See a doctor if complications arise.",
+    "specialist": "Dermatologist / General Physician",
+    "emoji": "🔴"
+  },
+  {
+    "id": 17,
+    "disease": "Jaundice",
+    "symptoms": ["yellow skin", "yellow eyes", "dark urine", "pale stools", "fatigue", "abdominal pain", "nausea", "vomiting", "fever", "itching"],
+    "description": "A condition causing yellowing of skin and eyes due to high bilirubin.",
+    "severity": "high",
+    "advice": "See a doctor immediately to identify the cause (liver, bile duct, or blood issue). Avoid alcohol.",
+    "specialist": "Gastroenterologist / Hepatologist",
+    "emoji": "🟡"
+  },
+  {
+    "id": 18,
+    "disease": "Kidney Stones",
+    "symptoms": ["severe back pain", "flank pain", "pain during urination", "blood in urine", "nausea", "vomiting", "frequent urination", "fever"],
+    "description": "Hard deposits of minerals and salts that form inside the kidneys.",
+    "severity": "high",
+    "advice": "Drink lots of water. Seek urgent medical care for severe pain. Treatment depends on stone size.",
+    "specialist": "Urologist / Nephrologist",
+    "emoji": "🫘"
+  },
+  {
+    "id": 19,
+    "disease": "Anxiety Disorder",
+    "symptoms": ["excessive worry", "restlessness", "fatigue", "difficulty concentrating", "irritability", "muscle tension", "insomnia", "palpitations", "sweating"],
+    "description": "A mental health condition characterized by persistent and excessive worry.",
+    "severity": "moderate",
+    "advice": "Practice relaxation techniques, exercise regularly, and seek therapy or counseling. Medication may help.",
+    "specialist": "Psychiatrist / Psychologist",
+    "emoji": "🧘"
+  },
+  {
+    "id": 20,
+    "disease": "Conjunctivitis (Pink Eye)",
+    "symptoms": ["red eyes", "itchy eyes", "watery eyes", "discharge from eyes", "swollen eyelids", "blurred vision", "sensitivity to light"],
+    "description": "Inflammation or infection of the transparent membrane lining the eyelid.",
+    "severity": "mild",
+    "advice": "Use prescribed eye drops, avoid touching eyes, wash hands frequently. Avoid sharing towels.",
+    "specialist": "Ophthalmologist",
+    "emoji": "👁️"
+  }
+]
