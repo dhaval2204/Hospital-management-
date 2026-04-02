@@ -56,6 +56,14 @@ export default function SlotPicker({ doctorId, date, selectedSlot, onSelect }) {
         .sp-selected-text { font-size: 13px; font-weight: 700; color: #1e1b4b; }
         .sp-selected-sub { font-size: 11px; color: #6366f1; font-weight: 500; }
         .sp-legend { display: flex; gap: 14px; margin-top: 12px; flex-wrap: wrap; }
+
+@media(max-width:480px){
+  .sp-grid{grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:6px;}
+  .sp-slot{padding:8px 4px;font-size:11px;}
+  .sp-slot-time{font-size:12px;}
+  .sp-info-bar{gap:6px;}
+  .sp-selected-banner{flex-wrap:wrap;}
+}
         .sp-legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #9ca3af; font-weight: 500; }
         .sp-legend-dot { width: 10px; height: 10px; border-radius: 3px; border: 1.5px solid; }
       `}</style>

@@ -69,6 +69,11 @@ export default function AppointmentsLine({ data }) {
           font-weight: 700;
           color: #1e1b4b;
         }
+
+@media(max-width:640px){
+  .lc-card{padding:16px 12px 10px;border-radius:14px;}
+  .lc-title{font-size:13px;}
+}
       `}</style>
 
       <div className="lc-card">
@@ -77,7 +82,7 @@ export default function AppointmentsLine({ data }) {
           <span className="lc-title">Appointments Per Day</span>
         </div>
 
-        <ResponsiveContainer width="100%" height={280}>
+        <ResponsiveContainer width="100%" height={typeof window !== "undefined" && window.innerWidth < 640 ? 200 : 280}>
           <AreaChart data={data} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
             <defs>
               <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="1">

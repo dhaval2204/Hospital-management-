@@ -95,6 +95,12 @@ export default function StatCard({ title, value, color = "blue", icon, trend }) 
           background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.08) 50%, transparent 60%);
           animation: shimmer 3s infinite;
         }
+
+@media (max-width: 640px) {
+  .stat-card { padding: 18px 18px; border-radius: 14px; }
+  .stat-value { font-size: 28px; }
+  .stat-label { font-size: 10px; }
+}
         @keyframes shimmer {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(100%); }

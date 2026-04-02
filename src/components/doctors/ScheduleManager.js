@@ -70,6 +70,17 @@ export default function ScheduleManager({ docId, schedules: initialSchedules }) 
         .sm-toggle input:checked + .sm-slider:before { transform: translateX(20px); }
         .sm-status-lbl { font-size: 11px; font-weight: 700; }
         .sm-day-lbl { font-weight: 700; color: #1e1b4b; }
+@media(max-width:768px){
+  .sm-table th,.sm-table td{padding:9px 10px;font-size:12px;}
+  .sm-time-input{width:95px;font-size:12px;}
+  .sm-save-btn{padding:8px 14px;font-size:12px;}
+}
+@media(max-width:540px){
+  .sm-header{flex-wrap:wrap;gap:10px;}
+  .sm-save-btn{width:100%;justify-content:center;}
+  .sm-table{min-width:460px;}
+}
+
       `}</style>
       <div className="sm-wrap">
         <div className="sm-header">

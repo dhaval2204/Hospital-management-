@@ -119,6 +119,17 @@ export default function PatientTable({ patients, onEdit, onDelete }) {
           font-size: 36px;
           margin-bottom: 10px;
         }
+@media(max-width:900px){
+  .pt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .pt-table{min-width:700px;}
+  .pt-table th,.pt-table td{padding:10px 12px;font-size:12px;}
+  .pt-btn{padding:5px 9px;font-size:11px;}
+}
+@media(max-width:480px){
+  .pt-table{min-width:560px;}
+  .pt-avatar{width:28px;height:28px;font-size:12px;border-radius:8px;}
+}
+
       `}</style>
 
       <div className="pt-wrap">

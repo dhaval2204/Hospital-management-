@@ -93,9 +93,17 @@ export default function Footer() {
           gap: 4px;
         }
         .footer-credit span { color: #ef4444; }
-        @media (max-width: 768px) {
-          .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
+
+@media(max-width:768px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px;}
+  .footer-inner{padding:28px 20px 18px;}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center;}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-brand-desc{max-width:100%;}
+}
+
       `}</style>
 
       <footer className="hms-footer">

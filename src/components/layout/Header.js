@@ -158,6 +158,22 @@ export default function Header() {
           font-weight: 600;
           color: #16a34a;
         }
+
+@media(max-width:768px){
+  .hms-header{padding:0 16px;height:56px;}
+  .logo-text p{display:none;}
+  .logo-text h1{font-size:13px;}
+  .user-name{display:none;}
+  .user-role{display:none;}
+  .live-badge span:last-child{display:none;}
+  .header-right{gap:7px;}
+  .logout-btn span{display:none;}
+  .logout-btn{padding:7px 10px;}
+}
+@media(max-width:480px){
+  .logo-text{display:none;}
+  .live-badge{padding:4px 7px;}
+}
       `}</style>
 
       <header className={`hms-header ${scrolled ? "scrolled" : ""}`}>

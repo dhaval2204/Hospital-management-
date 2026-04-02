@@ -25,16 +25,23 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const CustomLegend = ({ payload }) => (
-  <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center", marginTop: "12px" }}>
+  <div style={{ 
+    display: "flex", 
+    flexWrap: "wrap", 
+    gap: "8px", 
+    justifyContent: "center", 
+    marginTop: "20px", // Increased margin to prevent overlap
+    paddingBottom: "5px" 
+  }}>
     {payload.map((entry, i) => (
       <div key={i} style={{
         display: "flex", alignItems: "center", gap: "6px",
         background: LIGHT_COLORS[i % LIGHT_COLORS.length],
         padding: "4px 10px", borderRadius: "100px",
         fontFamily: "'Plus Jakarta Sans', sans-serif",
-        fontSize: "12px", fontWeight: 700, color: COLORS[i % COLORS.length],
+        fontSize: "11px", fontWeight: 700, color: COLORS[i % COLORS.length],
       }}>
-        <span style={{ width: 7, height: 7, borderRadius: "50%", background: entry.color, display: "inline-block" }} />
+        <span style={{ width: 6, height: 6, borderRadius: "50%", background: entry.color, display: "inline-block" }} />
         {entry.value}
       </div>
     ))}
@@ -55,11 +62,14 @@ export default function StatusPie({ data = [] }) {
           font-family: 'Plus Jakarta Sans', sans-serif;
           background: white;
           border-radius: 20px;
-          padding: 22px 22px 18px;
+          padding: 22px;
           border: 1px solid rgba(99,102,241,0.1);
           box-shadow: 0 4px 24px rgba(99,102,241,0.06);
           position: relative;
           overflow: hidden;
+          height: 100%; /* Ensure card takes full height of grid cell */
+          display: flex;
+          flex-direction: column;
         }
         .pc-card::before {
           content: '';
@@ -72,7 +82,7 @@ export default function StatusPie({ data = [] }) {
           display: flex;
           align-items: center;
           gap: 8px;
-          margin-bottom: 14px;
+          margin-bottom: 20px;
         }
         .pc-dot {
           width: 8px; height: 8px;
@@ -86,10 +96,14 @@ export default function StatusPie({ data = [] }) {
         }
         .pc-empty {
           text-align: center;
-          padding: 48px 0;
+          margin: auto;
           color: #a5b4fc;
           font-size: 14px;
-          font-weight: 500;
+        }
+
+        @media(max-width:640px){
+          .pc-card{padding:16px; border-radius:14px;}
+          .pc-title{font-size:13px;}
         }
       `}</style>
 
@@ -102,33 +116,35 @@ export default function StatusPie({ data = [] }) {
         {!formattedData.length ? (
           <div className="pc-empty">📊 No data available</div>
         ) : (
-          <ResponsiveContainer width="100%" height={280}>
-            <PieChart>
-              <Pie
-                data={formattedData}
-                dataKey="total"
-                nameKey="status"
-                cx="50%"
-                cy="45%"
-                outerRadius={100}
-                innerRadius={50}
-                paddingAngle={3}
-                label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
-                labelLine={false}
-              >
-                {formattedData.map((_, i) => (
-                  <Cell
-                    key={i}
-                    fill={COLORS[i % COLORS.length]}
-                    stroke="white"
-                    strokeWidth={2}
-                  />
-                ))}
-              </Pie>
-              <Tooltip content={<CustomTooltip />} />
-              <Legend content={<CustomLegend />} />
-            </PieChart>
-          </ResponsiveContainer>
+          <div style={{ flex: 1, minHeight: "300px", width: "100%" }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={formattedData}
+                  dataKey="total"
+                  nameKey="status"
+                  cx="50%"
+                  cy="50%" // Changed from 45% to center it perfectly
+                  outerRadius="80%" // Changed to percentage for better responsiveness
+                  innerRadius="55%" // Thinner donut looks cleaner
+                  paddingAngle={5}
+                  label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
+                  labelLine={false}
+                >
+                  {formattedData.map((_, i) => (
+                    <Cell
+                      key={i}
+                      fill={COLORS[i % COLORS.length]}
+                      stroke="#fff"
+                      strokeWidth={3}
+                    />
+                  ))}
+                </Pie>
+                <Tooltip content={<CustomTooltip />} />
+                <Legend content={<CustomLegend />} verticalAlign="bottom" />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
         )}
       </div>
     </>

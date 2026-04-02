@@ -85,6 +85,13 @@ export default function DoctorCard({ doctor, onClick }) {
         .dc-status { display: inline-flex; align-items: center; gap: 5px; border-radius: 100px; padding: 3px 10px; font-size: 11px; font-weight: 700; }
         .dc-status-dot { width: 6px; height: 6px; border-radius: 50%; }
         .dc-view-btn { display: inline-flex; align-items: center; gap: 5px; background: rgba(99,102,241,0.08); color: #4f46e5; border-radius: 100px; padding: 5px 12px; font-size: 12px; font-weight: 700; border: 1px solid rgba(99,102,241,0.18); transition: all 0.2s; }
+
+@media (max-width: 480px) {
+  .dc-card { padding: 16px; }
+  .dc-stats { grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+  .dc-stat-val { font-size: 13px; }
+  .dc-name { font-size: 14px; }
+}
         .dc-card:hover .dc-view-btn { background: linear-gradient(135deg,#6366f1,#4f46e5); color: white; border-color: transparent; }
       `}</style>
       <div className="dc-card" onClick={onClick}>

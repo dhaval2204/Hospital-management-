@@ -122,6 +122,13 @@ export default function ConfirmModal({
           box-shadow: 0 8px 20px rgba(239,68,68,0.45);
         }
         .modal-btn-delete:active { transform: scale(0.98); }
+@media(max-width:480px){
+  .modal-card{padding:24px 20px 20px;border-radius:18px;margin:0 16px;}
+  .modal-title{font-size:16px;}
+  .modal-message{font-size:13px;}
+  .modal-btn{padding:11px 8px;font-size:13px;}
+}
+
       `}</style>
 
       <div className="modal-overlay" onClick={onClose}>

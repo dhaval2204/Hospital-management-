@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [user, setUser] = useState({});
   const pathname = usePathname();
 
@@ -178,10 +179,36 @@ export default function Sidebar() {
           opacity: ${collapsed ? 0 : 1};
           transition: opacity 0.2s;
         }
+
+@media(max-width:768px){
+  .hms-sidebar{
+    position:fixed;
+    top:0;left:0;
+    z-index:200;
+    min-height:100dvh;
+    transform:translateX(-100%);
+    transition:transform 0.3s cubic-bezier(0.4,0,0.2,1),width 0.3s;
+    box-shadow:4px 0 24px rgba(0,0,0,0.35);
+  }
+  .hms-sidebar.mobile-open{
+    transform:translateX(0);
+  }
+  .collapse-btn{display:flex;}
+}
+@media(min-width:769px){
+  .sidebar-mobile-overlay{display:none!important;}
+}
       `}</style>
 
-      <div className="hms-sidebar">
+      <div className={`hms-sidebar${mobileOpen ? " mobile-open" : ""}`}>
         <div className="sidebar-glow" />
+        {mobileOpen && (
+          <div
+            className="sidebar-mobile-overlay"
+            onClick={() => setMobileOpen(false)}
+            style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.5)",zIndex:-1}}
+          />
+        )}
         <div className="sidebar-glow-2" />
 
         <div className="sidebar-top">
@@ -193,7 +220,7 @@ export default function Sidebar() {
               <span className="sidebar-brand-text">MediCore</span>
             </div>
           )}
-          <button onClick={() => setCollapsed(!collapsed)} className="collapse-btn">
+          <button onClick={() => { setCollapsed(!collapsed); setMobileOpen(o => !o); }} className="collapse-btn">
             <Menu size={16} />
           </button>
         </div>

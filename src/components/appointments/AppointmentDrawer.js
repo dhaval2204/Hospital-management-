@@ -68,6 +68,23 @@ const CSS = `
 .adr-loading { display:flex; align-items:center; justify-content:center; height:200px; flex-direction:column; gap:12px; }
 .adr-spinner { width:32px; height:32px; border:3px solid rgba(99,102,241,0.15); border-top-color:#6366f1; border-radius:50%; animation:adr-spin 0.8s linear infinite; }
 @keyframes adr-spin { to{transform:rotate(360deg)} }
+@media(max-width:600px){
+  .adr-drawer{width:100vw;border-radius:0;}
+  .adr-header{padding:14px 16px;}
+  .adr-header-title{font-size:14px;}
+  .adr-hero{padding:16px;}
+  .adr-section{padding:14px 16px;}
+  .adr-footer{padding:12px 16px;gap:6px;}
+  .adr-btn{padding:10px 8px;font-size:12px;}
+  .adr-meta-grid{grid-template-columns:1fr 1fr;}
+  .adr-date-row{gap:10px;}
+  .adr-date-block{width:48px;height:48px;border-radius:12px;}
+  .adr-date-day{font-size:18px;}
+  .adr-status-row{gap:6px;flex-wrap:wrap;}
+  .adr-person-card{padding:10px;}
+  .adr-history-item{padding:8px 0;}
+}
+
 `;
 
 const STATUS = {

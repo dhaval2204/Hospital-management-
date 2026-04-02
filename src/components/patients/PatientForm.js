@@ -91,6 +91,15 @@ export default function PatientForm({ form, setForm, onSubmit, editId }) {
           box-shadow: 0 8px 20px rgba(99,102,241,0.4);
         }
         .pf-submit:active { transform: scale(0.98); }
+@media(max-width:768px){
+  .pf-card{padding:20px 16px;}
+  .pf-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .pf-grid{grid-template-columns:1fr;}
+  .pf-submit{width:100%;}
+}
+
       `}</style>
 
       <div className="pf-card">

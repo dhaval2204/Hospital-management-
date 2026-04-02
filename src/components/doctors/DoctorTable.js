@@ -127,6 +127,17 @@ export default function DoctorTable({ doctors, onEdit, onDelete }) {
           background: rgba(239,68,68,0.18);
           transform: translateY(-1px);
         }
+
+@media (max-width: 768px) {
+  .dt-wrap { border-radius: 14px; }
+  .dt-table th, .dt-table td { padding: 10px 12px; font-size: 12px; }
+  .dt-avatar { width: 30px; height: 30px; font-size: 12px; border-radius: 8px; }
+  .dt-btn { padding: 5px 10px; font-size: 11px; }
+}
+@media (max-width: 480px) {
+  .dt-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .dt-table { min-width: 520px; }
+}
         .dt-empty {
           text-align: center;
           padding: 48px 0;

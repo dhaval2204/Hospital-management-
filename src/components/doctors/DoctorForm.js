@@ -91,6 +91,11 @@ export default function DoctorForm({ form, setForm, onSubmit, editId }) {
           box-shadow: 0 8px 20px rgba(99,102,241,0.4);
         }
         .df-submit:active { transform: scale(0.98); }
+@media (max-width: 640px) {
+  .df-card { padding: 20px 16px; }
+  .df-grid { grid-template-columns: 1fr; }
+}
+
       `}</style>
 
       <div className="df-card">

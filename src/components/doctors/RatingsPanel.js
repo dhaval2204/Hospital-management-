@@ -46,6 +46,15 @@ const CSS = `
 .rp-empty-icon { font-size: 36px; margin-bottom: 10px; }
 .rp-empty-text { font-size: 14px; font-weight: 600; color: #a5b4fc; }
 .rp-error { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); border-radius: 10px; padding: 10px 14px; color: #dc2626; font-size: 13px; font-weight: 600; margin-bottom: 14px; }
+
+@media(max-width:640px){
+  .rp-summary{flex-direction:column;gap:16px;align-items:stretch;}
+  .rp-big-score{font-size:40px;}
+  .rp-header{flex-wrap:wrap;gap:10px;}
+  .rp-add-btn{width:100%;justify-content:center;}
+  .rp-form-actions{flex-wrap:wrap;}
+  .rp-save-btn,.rp-cancel-btn{flex:1;text-align:center;}
+}
 .rp-success { background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); border-radius: 10px; padding: 10px 14px; color: #059669; font-size: 13px; font-weight: 600; margin-bottom: 14px; }
 `;
 

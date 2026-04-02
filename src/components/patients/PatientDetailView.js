@@ -99,6 +99,33 @@ const CSS = `
 /* Appointment row */
 .pdv-appt-row { display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: #fafafe; border: 1px solid rgba(99,102,241,0.08); border-radius: 14px; margin-bottom: 10px; transition: all 0.2s; }
 .pdv-appt-row:hover { border-color: rgba(99,102,241,0.2); background: white; }
+@media(max-width:768px){
+  .pdv{padding:16px;}
+  .pdv-hero-body{padding:0 16px 18px;gap:12px;}
+  .pdv-stat-bar{grid-template-columns:repeat(2,1fr);}
+  .pdv-stat-cell{padding:10px 12px;}
+  .pdv-stat-val{font-size:17px;}
+  .pdv-tabs{padding:4px;gap:2px;}
+  .pdv-tab{padding:8px 8px;font-size:12px;gap:3px;}
+  .pdv-panel{padding:18px 14px;}
+  .pdv-form-grid{grid-template-columns:1fr;}
+  .pdv-info-grid{grid-template-columns:1fr 1fr;}
+  .pdv-patient-name{font-size:18px;}
+  .pdv-sec-header{flex-wrap:wrap;gap:10px;}
+  .pdv-add-btn{font-size:12px;padding:7px 12px;}
+}
+@media(max-width:480px){
+  .pdv{padding:10px;}
+  .pdv-info-grid{grid-template-columns:1fr;}
+  .pdv-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .pdv-tab{flex-shrink:0;font-size:11px;padding:8px 10px;}
+  .pdv-form-actions{flex-wrap:wrap;}
+  .pdv-save-btn,.pdv-cancel-btn{flex:1;text-align:center;}
+  .pdv-id-card{width:100%!important;}
+  .pdv-appt-row{flex-wrap:wrap;gap:8px;}
+  .pdv-timeline-header{flex-direction:column;gap:4px;}
+}
+
 .pdv-appt-date-box { width: 48px; height: 48px; background: linear-gradient(135deg,#6366f1,#4f46e5); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(99,102,241,0.3); flex-shrink: 0; }
 .pdv-appt-date-day { font-size: 17px; font-weight: 800; color: white; line-height: 1; }
 .pdv-appt-date-mon { font-size: 10px; color: rgba(255,255,255,0.8); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }

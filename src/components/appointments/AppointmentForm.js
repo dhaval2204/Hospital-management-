@@ -52,6 +52,13 @@ export default function AppointmentForm({ form, setForm, onSubmit, editId }) {
         .af-submit:disabled { opacity:0.6; cursor:not-allowed; transform:none; }
         .af-submit-spin { width:14px; height:14px; border:2px solid rgba(255,255,255,0.3); border-top-color:white; border-radius:50%; animation:af-spin 0.7s linear infinite; }
         @keyframes af-spin { to { transform:rotate(360deg); } }
+@media(max-width:640px){
+  .af-card{padding:18px 14px;border-radius:14px;}
+  .af-grid{grid-template-columns:1fr;}
+  .af-submit{width:100%;justify-content:center;}
+  .af-doctor-preview{flex-wrap:wrap;}
+}
+
       `}</style>
 
       <div className="af-card">

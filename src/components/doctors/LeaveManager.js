@@ -75,6 +75,14 @@ export default function LeaveManager({ docId, leaves = [], onUpdate }) {
         .lm-empty { text-align: center; padding: 40px 20px; }
         .lm-empty-icon { font-size: 36px; margin-bottom: 10px; }
         .lm-empty-text { font-size: 14px; font-weight: 600; color: #a5b4fc; }
+@media(max-width:640px){
+  .lm-form-grid{grid-template-columns:1fr;}
+  .lm-header{flex-wrap:wrap;gap:10px;}
+  .lm-add-btn{width:100%;justify-content:center;}
+  .lm-actions{flex-wrap:wrap;}
+  .lm-save-btn,.lm-cancel-btn{flex:1;text-align:center;}
+}
+
       `}</style>
 
       <div className="lm-wrap">

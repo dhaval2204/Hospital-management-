@@ -37,6 +37,16 @@ export default function AppointmentTable({ data, onEdit, onDelete, onRowClick })
         .at-btn-delete{background:rgba(239,68,68,0.1);color:#dc2626;border:1px solid rgba(239,68,68,0.2);}
         .at-btn-delete:hover{background:rgba(239,68,68,0.18);transform:translateY(-1px);}
         .at-empty{text-align:center;padding:48px 0;color:#a5b4fc;font-size:14px;font-weight:500;}
+
+@media(max-width:768px){
+  .at-wrap{border-radius:14px;}
+  .at-table th,.at-table td{padding:10px 10px;font-size:12px;}
+  .at-btn{padding:5px 9px;font-size:11px;}
+}
+@media(max-width:600px){
+  .at-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .at-table{min-width:560px;}
+}
         .at-notes-chip{font-size:11px;color:#6b7280;background:rgba(107,114,128,0.08);border-radius:6px;padding:2px 7px;margin-top:3px;display:inline-block;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
       `}</style>
       <div className="at-wrap">

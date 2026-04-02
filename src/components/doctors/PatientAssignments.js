@@ -125,6 +125,19 @@ export default function PatientAssignments({ docId }) {
         .pa-empty-text { font-size: 14px; font-weight: 600; color: #a5b4fc; }
         .pa-spinner { width: 28px; height: 28px; margin: 0 auto 10px; border: 3px solid rgba(99,102,241,0.15); border-top-color: #6366f1; border-radius: 50%; animation: pa-spin 0.8s linear infinite; }
         @keyframes pa-spin { to { transform: rotate(360deg); } }
+@media(max-width:640px){
+  .pa-header{flex-wrap:wrap;gap:10px;}
+  .pa-add-btn{width:100%;justify-content:center;}
+  .pa-form-grid{grid-template-columns:1fr;}
+  .pa-actions{flex-wrap:wrap;}
+  .pa-save-btn,.pa-cancel-btn{flex:1;text-align:center;}
+  .pa-row{flex-wrap:wrap;gap:10px;}
+  .pa-filter-row{flex-wrap:wrap;gap:6px;}
+}
+@media(max-width:400px){
+  .pa-row > div:last-child{width:100%;flex-direction:row;justify-content:flex-end;}
+}
+
       `}</style>
 
       <div className="pa-wrap">

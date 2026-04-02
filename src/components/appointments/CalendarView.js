@@ -209,6 +209,19 @@ export default function CalendarView({ events: rawEvents, onEventDrop, onStatusC
         .cv-root .rbc-agenda-view table{border:1px solid rgba(99,102,241,.1);border-radius:14px;overflow:hidden}
         .cv-root .rbc-agenda-table thead tr th{background:linear-gradient(135deg,#f5f3ff,#ede9fe);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6366f1;padding:10px 14px}
         .cv-root .rbc-agenda-table tbody tr td{padding:10px 14px;font-size:13px;border-color:rgba(99,102,241,.06)!important}
+@media(max-width:768px){
+  .cv-root .rbc-toolbar{padding:8px 4px 6px;gap:6px;}
+  .cv-root .rbc-toolbar-label{font-size:13px;}
+  .cv-root .rbc-btn-group button{font-size:11px;padding:5px 10px;}
+  .cv-root .rbc-header{font-size:10px;padding:8px 2px;}
+  .cv-root .rbc-date-cell{font-size:11px;padding:2px 4px;}
+}
+@media(max-width:600px){
+  .cv-card{border-radius:14px;}
+  .dm-box{margin:0 12px;max-width:calc(100vw - 24px);}
+  .em-box{margin:0 12px;max-width:calc(100vw - 24px);}
+}
+
       `}</style>
 
       <div className="cv-root">
@@ -218,7 +231,7 @@ export default function CalendarView({ events: rawEvents, onEventDrop, onStatusC
               <div style={{width:7,height:7,borderRadius:"50%",background:"linear-gradient(135deg,#6366f1,#06b6d4)"}}/>
               <span style={{fontSize:15,fontWeight:700,color:"#1e1b4b"}}>Appointments Calendar</span>
             </div>
-            <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>
+            <div style={{display:"flex",gap:6,flexWrap:"wrap",maxWidth:"100%"}}>
               {counts.map(({status,count,bg,border,text,dot})=>(
                 <div key={status} style={{display:"flex",alignItems:"center",gap:5,fontSize:11.5,fontWeight:700,padding:"4px 10px",borderRadius:"100px",border:`1.5px solid ${border}`,background:bg,color:text}}>
                   <div style={{width:7,height:7,borderRadius:"50%",background:dot}}/>{status} <span style={{opacity:.7}}>({count})</span>
@@ -235,7 +248,7 @@ export default function CalendarView({ events: rawEvents, onEventDrop, onStatusC
               events={events}
               startAccessor="start"
               endAccessor="end"
-              style={{height:560}}
+              style={{height:typeof window !== 'undefined' && window.innerWidth < 640 ? 420 : 560}}
               view={view}
               onView={setView}
               views={["month","week","day","agenda"]}

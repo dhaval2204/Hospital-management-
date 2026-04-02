@@ -70,6 +70,11 @@ export default function DoctorBar({ data }) {
           font-weight: 700;
           color: #1e1b4b;
         }
+
+@media(max-width:640px){
+  .bc-card{padding:16px 12px 10px;border-radius:14px;}
+  .bc-title{font-size:13px;}
+}
       `}</style>
 
       <div className="bc-card">
@@ -78,7 +83,7 @@ export default function DoctorBar({ data }) {
           <span className="bc-title">Doctor Load</span>
         </div>
 
-        <ResponsiveContainer width="100%" height={280}>
+        <ResponsiveContainer width="100%" height={typeof window !== "undefined" && window.innerWidth < 640 ? 200 : 280}>
           <BarChart data={data} margin={{ top: 5, right: 10, left: -20, bottom: 0 }} barSize={28}>
             <CartesianGrid stroke="rgba(99,102,241,0.07)" strokeDasharray="4 4" vertical={false} />
             <XAxis

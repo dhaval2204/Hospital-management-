@@ -57,6 +57,33 @@ const CSS = `
 .ddv-info-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: #9ca3af; margin-bottom: 5px; }
 .ddv-info-value { font-size: 14px; font-weight: 600; color: #1e1b4b; }
 .ddv-edit-form { background: #fafafe; border: 1.5px solid rgba(99,102,241,0.15); border-radius: 16px; padding: 20px; margin-bottom: 20px; }
+@media(max-width:768px){
+  .ddv{padding:16px;}
+  .ddv-hero-body{padding:0 16px 18px;gap:12px;}
+  .ddv-stat-bar{grid-template-columns:repeat(2,1fr);}
+  .ddv-stat-cell{padding:10px 12px;}
+  .ddv-stat-val{font-size:17px;}
+  .ddv-tabs{padding:4px;gap:2px;}
+  .ddv-tab{padding:8px 8px;font-size:12px;gap:4px;}
+  .ddv-panel{padding:18px 14px;}
+  .ddv-info-grid{grid-template-columns:1fr 1fr;}
+  .ddv-form-grid{grid-template-columns:1fr;}
+  .ddv-doc-name{font-size:18px;}
+  .ddv-hero-actions{padding-top:0;}
+  .ddv-schedule-table{min-width:480px;}
+}
+@media(max-width:480px){
+  .ddv{padding:12px;}
+  .ddv-stat-bar{grid-template-columns:repeat(2,1fr);}
+  .ddv-hero-body{flex-wrap:wrap;}
+  .ddv-hero-actions{margin-left:0;width:100%;}
+  .ddv-add-btn{width:100%;justify-content:center;}
+  .ddv-info-grid{grid-template-columns:1fr;}
+  .ddv-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .ddv-tab{flex-shrink:0;font-size:11px;}
+  .ddv-sec-header{flex-wrap:wrap;gap:10px;}
+}
+
 `;
 
 export default function DoctorDetailView({ doctor: propDoctor, onUpdate }) {

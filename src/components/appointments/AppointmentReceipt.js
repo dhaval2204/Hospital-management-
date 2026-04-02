@@ -62,6 +62,22 @@ const CSS = `
 .rcpt-footer { text-align:center; padding-top:16px; border-top:1px dashed rgba(99,102,241,0.15); }
 .rcpt-footer-text { font-size:11.5px; color:#a5b4fc; font-weight:600; margin-bottom:4px; }
 .rcpt-footer-small { font-size:10px; color:#d1d5db; font-weight:500; }
+
+@media(max-width:640px){
+  .rcpt-modal{border-radius:14px;}
+  .rcpt-toolbar{flex-wrap:wrap;gap:8px;padding:12px 16px;}
+  .rcpt-toolbar-actions{width:100%;display:flex;gap:8px;}
+  .rcpt-toolbar-actions .rcpt-btn{flex:1;justify-content:center;}
+  .rcpt-doc{padding:20px 16px;}
+  .rcpt-header{flex-direction:column;gap:14px;align-items:flex-start;}
+  .rcpt-receipt-info{text-align:left;}
+  .rcpt-two-col{grid-template-columns:1fr;}
+  .rcpt-appt-banner{flex-direction:column;gap:12px;padding:16px;}
+  .rcpt-status-pill{align-self:flex-start;}
+  .rcpt-qr-section{flex-direction:column;align-items:flex-start;}
+  .rcpt-billing-row{flex-direction:column;gap:10px;align-items:flex-start;}
+}
+
 @media print {
   .rcpt-overlay { position:static; background:none; padding:0; }
   .rcpt-modal { box-shadow:none; border-radius:0; max-height:none; }

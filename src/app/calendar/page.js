@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import CalendarView from "@/components/appointments/CalendarView";
 
@@ -11,88 +10,61 @@ export default function CalendarPage() {
     setLoading(true);
     fetch("/api/appointments")
       .then(res => res.json())
-      .then(data => {
-        setEvents(Array.isArray(data) ? data : []);
-        setLoading(false);
-      })
+      .then(data => { setEvents(Array.isArray(data) ? data : []); setLoading(false); })
       .catch(() => setLoading(false));
   };
-
   useEffect(() => { fetchEvents(); }, []);
 
-  // Drag to reschedule — updates appointment_date + appointment_time
   const handleEventDrop = async (id, newDate, newTime) => {
     try {
       const res = await fetch(`/api/appointments/${id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
+        method: "PUT", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ appointment_date: newDate, appointment_time: newTime }),
       });
-      if (res.ok) {
-        fetchEvents(); // refresh
-      }
-    } catch (err) {
-      console.error("Reschedule failed:", err);
-    }
+      if (res.ok) fetchEvents();
+    } catch (err) { console.error("Reschedule failed:", err); }
   };
 
-  // Status change from event modal
   const handleStatusChange = async (id, status) => {
     try {
       const res = await fetch(`/api/appointments/${id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
+        method: "PUT", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status }),
       });
-      if (res.ok) {
-        // Optimistically update local state too
-        setEvents(prev =>
-          prev.map(e => e.id === id ? { ...e, status } : e)
-        );
-      }
-    } catch (err) {
-      console.error("Status update failed:", err);
-    }
+      if (res.ok) setEvents(prev => prev.map(e => e.id === id ? { ...e, status } : e));
+    } catch (err) { console.error("Status update failed:", err); }
   };
 
   return (
-    <>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-        .cp-root { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .cp-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; flex-wrap: wrap; gap: 12px; }
-        .cp-title { font-size: 24px; font-weight: 800; color: #1e1b4b; letter-spacing: -0.5px; }
-        .cp-sub { font-size: 13px; color: #6b7280; font-weight: 500; margin-top: 2px; }
-        .cp-refresh { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 10px; border: 1.5px solid rgba(99,102,241,0.25); background: rgba(99,102,241,0.06); color: #4f46e5; font-size: 13px; font-weight: 700; font-family: 'Plus Jakarta Sans',sans-serif; cursor: pointer; transition: all 0.2s; }
-        .cp-refresh:hover { background: rgba(99,102,241,0.12); transform: translateY(-1px); }
-        .cp-loading { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 80px; background: white; border-radius: 20px; border: 1px solid rgba(99,102,241,0.1); }
-        .cp-spin { width: 28px; height: 28px; border: 3px solid rgba(99,102,241,0.15); border-top-color: #6366f1; border-radius: 50%; animation: cp-spin 0.8s linear infinite; }
-        @keyframes cp-spin { to { transform: rotate(360deg); } }
-        .cp-spin-text { font-size: 14px; color: #6b7280; font-weight: 600; }
-      `}</style>
-
-      <div className="cp-root">
-        <div className="cp-header">
-          <div>
-            <div className="cp-title">📅 Calendar</div>
-            <div className="cp-sub">{events.length} appointment{events.length !== 1 ? "s" : ""} scheduled</div>
-          </div>
-          <button className="cp-refresh" onClick={fetchEvents}>🔄 Refresh</button>
+    <div>
+      {/* Header */}
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <div>
+          <h1 className="text-2xl font-extrabold text-indigo-950 tracking-tight">📅 Calendar</h1>
+          <p className="text-sm text-gray-500 font-medium mt-0.5">
+            {events.length} appointment{events.length !== 1 ? "s" : ""} scheduled
+          </p>
         </div>
-
-        {loading ? (
-          <div className="cp-loading">
-            <div className="cp-spin" />
-            <span className="cp-spin-text">Loading calendar...</span>
-          </div>
-        ) : (
-          <CalendarView
-            events={events}
-            onEventDrop={handleEventDrop}
-            onStatusChange={handleStatusChange}
-          />
-        )}
+        <button
+          onClick={fetchEvents}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border-[1.5px] border-indigo-200 bg-indigo-50 text-indigo-600 text-sm font-bold hover:bg-indigo-100 hover:-translate-y-0.5 transition-all"
+        >
+          🔄 Refresh
+        </button>
       </div>
-    </>
+
+      {loading ? (
+        <div className="flex items-center justify-center gap-3 py-20 bg-white rounded-2xl border border-indigo-50 shadow-sm">
+          <div className="w-7 h-7 rounded-full border-[3px] border-indigo-100 border-t-indigo-500 animate-spin" />
+          <span className="text-sm text-gray-500 font-semibold">Loading calendar...</span>
+        </div>
+      ) : (
+        <CalendarView
+          events={events}
+          onEventDrop={handleEventDrop}
+          onStatusChange={handleStatusChange}
+        />
+      )}
+    </div>
   );
 }
