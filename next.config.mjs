@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  experimental: {
-    serverComponentsExternalPackages: ['pg'],
-  },
+  /* config options here */
+  reactCompiler: true,
 };
 
-module.exports = nextConfig;
+export default nextConfig;

@@ -43,18 +43,18 @@ export default function Dashboard() {
       <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
 
       {/* 🔥 CARDS */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
-        <Card title="Patients" value={data.counts.patients} type="patients" />
-        <Card title="Doctors" value={data.counts.doctors} type="doctors" />
-        <Card title="Today" value={data.counts.today} type="today" />
-        <Card title="Pending" value={data.counts.pending} type="pending" />
-      </div>
+     <div className="grid grid-cols-4 gap-4 mb-6">
+  <Card title="Patients" value={data?.counts?.patients || 0} type="patients" />
+  <Card title="Doctors" value={data?.counts?.doctors || 0} type="doctors" />
+  <Card title="Today" value={data?.counts?.today || 0} type="today" />
+  <Card title="Pending" value={data?.counts?.pending || 0} type="pending" />
+</div>
 
       {/* 🔥 CHARTS */}
       <div className="grid grid-cols-2 gap-6">
-        <AppointmentsLine data={data.daily} />
-        <DoctorBar data={data.doctorLoad} />
-        <StatusPie data={data.status} />
+    <AppointmentsLine data={data?.daily || []} />
+<DoctorBar data={data?.doctorLoad || []} />
+<StatusPie data={data?.status || []} />
       </div>
     </div>
   );
